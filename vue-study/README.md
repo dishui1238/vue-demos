@@ -1,5 +1,7 @@
 # study-vue
 
+本 demo 主要是手写 vue-router 原理
+
 ## Project setup
 ```
 npm install
