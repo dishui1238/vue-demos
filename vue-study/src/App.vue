@@ -2,14 +2,23 @@
   <div id="app">
     <div id="nav">
       <!-- 路由跳转连接 -->
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
     </div>
     <!-- 路由出口 -->
     <!-- 利用vue响应式：current -->
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  mounted() {
+    console.log('app', this.$store);
+  },
+};
+</script>
 
 <style>
 #app {
