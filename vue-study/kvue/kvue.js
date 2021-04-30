@@ -111,6 +111,7 @@ class Compile {
         // console.log('元素', node.nodeName);
         // 处理指令和事件
         const attrs = node.attributes
+        debugger;
         Array.from(attrs).forEach(attr => {
           // k-xxx="abc"
           const attrName = attr.name

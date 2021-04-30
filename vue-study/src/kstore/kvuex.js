@@ -12,6 +12,7 @@ class Store {
 
     this.commit = this.commit.bind(this);
     this.dispatch = this.dispatch.bind(this);
+    // 3. 实现 getters
     this.getters = {}; // 仓库上面挂载一个getters, 暴露给用户
     const computed = {}; // {doubleCounter: doubleCounter(){return state.counter * 2}}
     // $store.getters.doubleCounter
@@ -42,7 +43,6 @@ class Store {
   }
 
   get state() {
-    console.log("this._vm", this._vm);
     return this._vm._data.$$state;
   }
 
@@ -69,8 +69,6 @@ class Store {
 
     entry(this, payload);
   }
-
-  // 3. 实现 getters
 }
 
 // Vue.use
@@ -82,6 +80,7 @@ function install(_Vue) {
     beforeCreate() {
       // 根实例才有this.$options.store，即 main.js
       if (this.$options.store) {
+        console.log("store", this.$options.store);
         // this.$store = this.$options.store  // 在当前实例上挂 $store
         Vue.prototype.$store = this.$options.store; // 在vue原型上挂 $store，所有 vue 实例都能访问
       } else {

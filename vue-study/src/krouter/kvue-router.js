@@ -14,6 +14,7 @@ class VueRouter {
     Vue.util.defineReactive(this, "matched", []);
     // 监控 hash 变化 hash变化的时候更新current，从而触发router-view组件的重新渲染
     window.addEventListener("hashchange", this.onHashChange.bind(this));
+    // 初始执行一次
     this.match();
   }
 
